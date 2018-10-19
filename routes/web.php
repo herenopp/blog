@@ -15,12 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/check', function () {
-    return 'อายุเกิน 200 จ้า';
-})->middleware(\App\Http\Middleware\CheckAge::class);
-
 Route::get('/home', function () {
-    return 'ยินดีต้อนรับสู่หน้าแรก';
+    return view('create.home');
 });
 
-Route::get('/user', 'UserController@index');
+
+// Route::get('/check', function () {
+//     return 'อายุเกิน 200 จ้า';
+// })->middleware(\App\Http\Middleware\CheckAge::class);
+
+// Route::get('/home', function () {
+//     return 'ยินดีต้อนรับสู่หน้าแรก';
+// });
+
+// Route::get('user/{name}', 'UserController@index');
+
+Route::get('/show', 'UserController@show');
